@@ -7,7 +7,7 @@ const obtenerInformacion = async () => {
     const id = url.searchParams.get("id");
   
     if (id === null) {
-      window.location.href = "/screens/error.html";
+      window.location.href = "../error.html";
     }
   
     const nombre = document.querySelector("[data-nombre]");
@@ -22,7 +22,7 @@ const obtenerInformacion = async () => {
         throw new Error();
       }
     } catch (error) {
-      window.location.href = "/screens/error.html";
+      window.location.href = "../error.html";
     }
   };
 
@@ -36,6 +36,6 @@ formulario.addEventListener("submit", (evento) => {
   const nombre = document.querySelector("[data-nombre]").value;
   const email = document.querySelector("[data-email]").value;
   clientServices.actualizarCliente(nombre, email, id).then(() => {
-    window.location.href = "/screens/edicion_concluida.html";
+    window.location.href = "../edicion_concluida.html";
   });
 });
